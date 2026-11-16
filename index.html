@@ -504,16 +504,21 @@ a.btn.max-cta img{object-fit:contain}
 .portrait-frame:after{display:none!important;content:none!important}
 
 
-/* Контакты в первом экране: отдельная подпись и две кнопки связи */
+/* Контакты в первом экране: две кнопки связи */
 .contact-actions{align-items:center;gap:12px}
-.contact-caption{display:inline-flex;align-items:center;min-height:48px;padding:0 18px;border:1px solid rgba(173,151,255,.48);border-radius:999px;background:rgba(255,255,255,.045);color:#eef2ff;font-size:12px;font-weight:800;letter-spacing:.02em;cursor:default;box-shadow:inset 0 0 16px rgba(148,120,255,.05)}
 .contact-btn{min-height:48px;padding:12px 18px;font-size:12px}
 .contact-btn svg{width:21px;height:21px;fill:currentColor;flex:0 0 auto}
 .contact-btn.telegram-btn{background:linear-gradient(110deg,#36aee8,#168bd0);color:#fff;box-shadow:0 8px 25px rgba(30,145,210,.22)}
 .contact-btn.max-cta{background:linear-gradient(110deg,#a7c8ef,#a78bfa);color:#121a2a}
 .contact-btn.max-cta img{width:23px;height:23px}
 .cta-contact-actions{margin:28px 0 0;gap:12px}
-@media(max-width:560px){.contact-actions{justify-content:center}.contact-caption{width:100%;justify-content:center}.contact-btn{flex:1 1 100%;max-width:320px}}
+@media(max-width:560px){.contact-actions{justify-content:center}.contact-btn{flex:1 1 100%;max-width:320px}}
+
+/* Нижняя кнопка Telegram: принудительно видима в CTA-блоке */
+.cta .cta-contact-actions #bottom-telegram-booking{display:inline-flex!important;visibility:visible!important;opacity:1!important;align-items:center!important;justify-content:center!important;gap:10px!important;flex:0 1 auto!important;min-height:48px!important;}
+.cta .cta-contact-actions #bottom-telegram-booking svg{display:block!important;width:21px!important;height:21px!important;fill:currentColor!important;flex:0 0 21px!important;}
+@media(max-width:560px){.cta .cta-contact-actions #bottom-telegram-booking{display:inline-flex!important;flex:1 1 100%!important;max-width:320px!important;}}
+
 </style>
 </head>
 <body>
@@ -531,7 +536,6 @@ a.btn.max-cta img{object-fit:contain}
 <p class="hero-promise"><strong>Ваш ребёнок в 9 или 11 классе, а до экзаменов меньше года?</strong> Школьная программа хромает, а онлайн-школы предлагают лишь записи вебинаров без обратной связи? Хватит переживать.</p>
 <p class="lead">Меня зовут Дмитрий Кадин. Я частный репетитор по математике и информатике. У меня никакого потока — только индивидуальные онлайн-занятия, качественная подготовка к ОГЭ и ЕГЭ и полное погружение в предмет. Напишите мне сейчас и получите бесплатную консультацию. </p>
 <div class="hero-actions contact-actions">
-  <span class="contact-caption">Получить консультацию</span>
   <a class="btn contact-btn telegram-btn" href="https://t.me/+79093751602" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 3.3 18.4 20c-.2 1.2-.9 1.5-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.5l-4.9-1.6c-1.1-.3-1.1-1.1.2-1.6L20.4 2.7c.9-.3 1.6.2 1.2.6Z"/></svg><span>Написать в Телеграм</span></a>
   <a class="btn contact-btn max-cta" href="https://max.ru/u/f9LHodD0cOLBfNN-YeppxnGQrPf1UTD7PWSxiRso7DJfSr__57XB8cd6aWM" target="_blank" rel="noopener"><img src="https://max.ru/s/img/big-logo.png" alt="" aria-hidden="true"><span>Написать в МАХ</span></a>
 </div>
@@ -673,7 +677,8 @@ a.btn.max-cta img{object-fit:contain}
 <p class="review-note">Отзывы учеников и родителей.</p>
 </section>
 <section class="wrap"><div class="cta reveal"><div class="eyebrow">Первый шаг</div><h2>Давайте разберёмся, что нужно именно вам.</h2><p>Напишите, какой предмет и экзамен вас интересует, в каком вы классе и к какому результату стремитесь. Обсудим формат занятий и стоимость.</p><div class="hero-actions contact-actions cta-contact-actions">
-<a class="btn contact-btn telegram-btn" href="https://t.me/+79093751602" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 3.3 18.4 20c-.2 1.2-.9 1.5-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.5l-4.9-1.6c-1.1-.3-1.1-1.1.2-1.6L20.4 2.7c.9-.3 1.6.2 1.2.6Z"/></svg><span>Написать в Телеграм</span></a>
+
+<a id="bottom-telegram-booking" class="btn contact-btn telegram-btn" href="https://t.me/+79093751602" target="_blank" rel="noopener noreferrer" aria-label="Написать в Телеграм для записи"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21.6 3.3 18.4 20c-.2 1.2-.9 1.5-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.5l-4.9-1.6c-1.1-.3-1.1-1.1.2-1.6L20.4 2.7c.9-.3 1.6.2 1.2.6Z"/></svg><span>Написать в Телеграм</span></a>
 <a class="btn contact-btn max-cta" href="https://max.ru/u/f9LHodD0cOLBfNN-YeppxnGQrPf1UTD7PWSxiRso7DJfSr__57XB8cd6aWM" target="_blank" rel="noopener"><img src="https://max.ru/s/img/big-logo.png" alt="" aria-hidden="true"><span>Написать в МАХ</span></a>
 </div></div></section>
 </main>
